@@ -1,0 +1,632 @@
+/* ============================================================
+   CENTRO COMUNITARIO - UNIVERSIDAD LA SALLE BAJÍO
+   Hoja de estilos
+   ============================================================ */
+
+:root {
+  --blue: #202f68;
+  --blue-dark: #131e47;
+  --blue-soft: #eef1fa;
+  --red: #d71936;
+  --red-dark: #b80f2a;
+  --white: #ffffff;
+  --ink: #1d2433;
+  --muted: #657087;
+  --line: #e1e5ee;
+  --shadow: 0 18px 50px rgba(18, 31, 72, 0.10);
+  --radius: 22px;
+  --container: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--white);
+  font-family: "Montserrat", Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 15%, rgba(215, 25, 54, 0.25), transparent 28%),
+    linear-gradient(125deg, var(--blue-dark) 0%, var(--blue) 58%, #263a7e 100%);
+  color: var(--white);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: -105px;
+  height: 180px;
+  background: var(--white);
+  border-radius: 50% 50% 0 0 / 55% 55% 0 0;
+}
+
+.hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.hero__glow--one {
+  width: 360px;
+  height: 360px;
+  right: -100px;
+  top: -130px;
+  border: 1px solid rgba(255,255,255,.16);
+}
+
+.hero__glow--two {
+  width: 190px;
+  height: 190px;
+  left: 7%;
+  bottom: -90px;
+  background: rgba(215,25,54,.14);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 70px;
+  align-items: center;
+  padding: 76px 0 110px;
+}
+
+.brand-card {
+  background: rgba(255,255,255,.97);
+  border-radius: 24px;
+  padding: 28px 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+}
+
+.brand-card__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero__copy {
+  max-width: 800px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #f2a0ac;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 3px;
+  border-radius: 4px;
+  background: var(--red);
+}
+
+.eyebrow--blue {
+  color: var(--blue);
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin: 0 0 20px;
+  font-size: clamp(2.35rem, 5vw, 4.7rem);
+  line-height: 1.04;
+  letter-spacing: -.04em;
+}
+
+.hero p {
+  max-width: 730px;
+  margin: 0 0 32px;
+  color: rgba(255,255,255,.84);
+  font-size: 1.06rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 14px 22px;
+  border: 2px solid transparent;
+  border-radius: 13px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:focus-visible,
+.accordion-trigger:focus-visible {
+  outline: 3px solid #f7b5bf;
+  outline-offset: 4px;
+}
+
+.button--light {
+  color: var(--blue);
+  background: var(--white);
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.button--light:hover {
+  box-shadow: 0 16px 35px rgba(0,0,0,.18);
+}
+
+/* ---------------- SERVICES ---------------- */
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 42px;
+}
+
+.section-heading h2,
+.appointment-card h2 {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+  gap: 46px;
+  align-items: stretch;
+}
+
+.accordion {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.service-item {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 6px 20px rgba(22,34,73,.045);
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.service-item.is-open {
+  border-color: rgba(215,25,54,.38);
+  box-shadow: 0 12px 28px rgba(22,34,73,.08);
+}
+
+.service-item__heading {
+  margin: 0;
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr 30px;
+  gap: 14px;
+  align-items: center;
+  padding: 19px 20px;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: var(--blue);
+  background: var(--blue-soft);
+  font-size: .74rem;
+  font-weight: 800;
+}
+
+.service-name {
+  font-weight: 750;
+}
+
+.chevron {
+  color: var(--red);
+  font-size: 1.6rem;
+  line-height: 1;
+  text-align: center;
+  transition: transform .25s ease;
+}
+
+.is-open .chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  padding: 0 78px 20px;
+  color: var(--muted);
+  animation: panelIn .25s ease both;
+}
+
+.accordion-panel p {
+  margin: 0;
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mascot-card {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255,255,255,.95), transparent 44%),
+    linear-gradient(150deg, #f5f6fa, #e8ebf4);
+  box-shadow: var(--shadow);
+}
+
+.mascot-card::before {
+  content: "";
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  top: 55px;
+  border-radius: 50%;
+  background: rgba(215,25,54,.07);
+}
+
+.mascot-card__badge {
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  left: 22px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--red);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  box-shadow: 0 10px 20px rgba(215,25,54,.2);
+}
+
+.mascot-card__image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 94%;
+  height: 100%;
+  max-height: 610px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* ---------------- APPOINTMENT ---------------- */
+
+.appointment {
+  padding-top: 30px;
+  background: #f7f8fb;
+}
+
+.appointment-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 40px;
+  overflow: hidden;
+  padding: 54px;
+  border-radius: 28px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(215,25,54,.35), transparent 35%),
+    linear-gradient(135deg, var(--blue-dark), var(--blue));
+  box-shadow: var(--shadow);
+}
+
+.appointment-card h2 {
+  color: var(--white);
+}
+
+.appointment-card p {
+  max-width: 650px;
+  margin: 0 0 28px;
+  color: rgba(255,255,255,.76);
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.button--large {
+  justify-content: flex-start;
+  min-height: 78px;
+  padding: 14px 18px;
+}
+
+.button__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.14);
+  font-size: 1.35rem;
+}
+
+.button--red {
+  color: var(--white);
+  background: var(--red);
+  box-shadow: 0 12px 24px rgba(0,0,0,.14);
+}
+
+.button--red:hover {
+  background: var(--red-dark);
+  box-shadow: 0 16px 30px rgba(0,0,0,.18);
+}
+
+.button--large strong,
+.button--large small {
+  display: block;
+}
+
+.button--large strong {
+  font-size: .9rem;
+}
+
+.button--large small {
+  margin-top: 2px;
+  opacity: .78;
+  font-size: .82rem;
+}
+
+.button--outline {
+  color: var(--white);
+  border-color: rgba(255,255,255,.45);
+  background: transparent;
+}
+
+.button--outline:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,.08);
+}
+
+.appointment-card__mark {
+  position: relative;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 190px;
+  height: 190px;
+  margin-inline: auto;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 50%;
+  color: var(--white);
+  background: rgba(255,255,255,.055);
+  text-align: center;
+  transform: rotate(-8deg);
+}
+
+.appointment-card__mark::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed rgba(255,255,255,.24);
+  border-radius: 50%;
+}
+
+.appointment-card__mark span:first-child {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -.05em;
+}
+
+.appointment-card__mark span:last-child {
+  max-width: 110px;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer {
+  padding: 25px 0;
+  color: rgba(255,255,255,.78);
+  background: var(--blue-dark);
+  text-align: center;
+  font-size: .82rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__content {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding-top: 55px;
+  }
+
+  .brand-card {
+    width: min(330px, 100%);
+  }
+
+  .services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mascot-card {
+    min-height: 430px;
+    order: -1;
+  }
+
+  .appointment-card {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-card__mark {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .section {
+    padding: 62px 0;
+  }
+
+  .hero__content {
+    padding: 38px 0 90px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .hero p {
+    font-size: .96rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .accordion-trigger {
+    grid-template-columns: 42px 1fr 24px;
+    gap: 10px;
+    padding: 16px 14px;
+  }
+
+  .service-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .service-name {
+    font-size: .9rem;
+  }
+
+  .accordion-panel {
+    padding: 0 56px 18px 64px;
+    font-size: .9rem;
+  }
+
+  .mascot-card {
+    min-height: 360px;
+  }
+
+  .mascot-card__image {
+    width: 100%;
+  }
+
+  .appointment-card {
+    padding: 32px 22px;
+    border-radius: 22px;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .button--large {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

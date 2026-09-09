@@ -1,0 +1,549 @@
+<!-- =========================
+     index.html
+     ========================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Centro Solidaridad de la Universidad La Salle Bajío – Satélite">
+  <title>Centro Solidaridad | Universidad La Salle Bajío</title>
+
+  <!-- Fuente institucional moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ENCABEZADO
+       Cambia el logo en:
+       assets/logo-lasalle.png
+       ===================================================== -->
+  <header class="hero">
+
+    <div class="hero__glow hero__glow--one"></div>
+    <div class="hero__glow hero__glow--two"></div>
+
+    <div class="container hero__content">
+
+      <div class="brand-card">
+        <img
+          src="assets/logo-lasalle.png"
+          alt="Universidad La Salle Bajío"
+          class="brand-card__logo"
+        >
+      </div>
+
+      <div class="hero__copy">
+
+        <span class="eyebrow">
+          Centro Solidaridad · Satélite
+        </span>
+
+        <h1>
+          ¡Conoce el nuevo Centro Solidaridad de la Universidad La Salle Bajío!
+        </h1>
+
+        <p>
+          Un espacio pensado para acercar diferentes servicios a la comunidad.
+          Explora nuestras áreas, conoce lo que ofrecemos y agenda tu cita.
+        </p>
+
+        <a class="button button--light" href="#servicios">
+          Conoce nuestros servicios
+          <span aria-hidden="true">↓</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         SERVICIOS
+         ===================================================== -->
+    <section
+      class="services section"
+      id="servicios"
+      aria-labelledby="services-title"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow eyebrow--blue">
+            Servicios disponibles
+          </span>
+
+          <h2 id="services-title">
+            Áreas que ofrece nuestro Centro Solidaridad
+          </h2>
+
+          <p>
+            Selecciona un área para conocer brevemente los servicios disponibles.
+          </p>
+
+        </div>
+
+
+        <div class="services-layout">
+
+          <!-- ACORDEÓN -->
+          <div class="accordion" id="accordion">
+
+
+            <!-- 01 -->
+            <article class="service-item">
+
+              <h3 class="service-item__heading">
+
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-1"
+                  id="service-trigger-1"
+                >
+
+                  <span class="service-icon" aria-hidden="true">
+                    01
+                  </span>
+
+                  <span class="service-name">
+                    Asesoría de Negocios y Legal
+                  </span>
+
+                  <span class="chevron" aria-hidden="true">
+                    ⌄
+                  </span>
+
+                </button>
+
+              </h3>
+
+
+              <div
+                class="accordion-panel"
+                id="service-panel-1"
+                role="region"
+                aria-labelledby="service-trigger-1"
+                hidden
+              >
+
+                <p>
+                  Orientamos en buscar empleo, controlar el gasto familiar y
+                  personal, compras inteligentes, trámites en línea y aplicar
+                  a una entrevista de trabajo.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- 02 -->
+            <article class="service-item">
+
+              <h3 class="service-item__heading">
+
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-2"
+                  id="service-trigger-2"
+                >
+
+                  <span class="service-icon" aria-hidden="true">
+                    02
+                  </span>
+
+                  <span class="service-name">
+                    Medicina General
+                  </span>
+
+                  <span class="chevron" aria-hidden="true">
+                    ⌄
+                  </span>
+
+                </button>
+
+              </h3>
+
+
+              <div
+                class="accordion-panel"
+                id="service-panel-2"
+                role="region"
+                aria-labelledby="service-trigger-2"
+                hidden
+              >
+
+                <p>
+                  Consulta médica general, valoración y seguimiento,
+                  tomas de signos vitales, campañas de prevención.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- 03 -->
+            <article class="service-item">
+
+              <h3 class="service-item__heading">
+
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-3"
+                  id="service-trigger-3"
+                >
+
+                  <span class="service-icon" aria-hidden="true">
+                    03
+                  </span>
+
+                  <span class="service-name">
+                    Odontología
+                  </span>
+
+                  <span class="chevron" aria-hidden="true">
+                    ⌄
+                  </span>
+
+                </button>
+
+              </h3>
+
+
+              <div
+                class="accordion-panel"
+                id="service-panel-3"
+                role="region"
+                aria-labelledby="service-trigger-3"
+                hidden
+              >
+
+                <p>
+                  Apertura de expediente, limpieza dental,
+                  profilaxis y flúor.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- 04 -->
+            <article class="service-item">
+
+              <h3 class="service-item__heading">
+
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-4"
+                  id="service-trigger-4"
+                >
+
+                  <span class="service-icon" aria-hidden="true">
+                    04
+                  </span>
+
+                  <span class="service-name">
+                    Psicología
+                  </span>
+
+                  <span class="chevron" aria-hidden="true">
+                    ⌄
+                  </span>
+
+                </button>
+
+              </h3>
+
+
+              <div
+                class="accordion-panel"
+                id="service-panel-4"
+                role="region"
+                aria-labelledby="service-trigger-4"
+                hidden
+              >
+
+                <p>
+                  Orientación a la psicología para niños y niñas,
+                  adolescentes y personas adultas, evaluaciones psicológicas
+                  y procesos de acompañamiento.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- 05 -->
+            <article class="service-item">
+
+              <h3 class="service-item__heading">
+
+                <button
+                  class="accordion-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-panel-5"
+                  id="service-trigger-5"
+                >
+
+                  <span class="service-icon" aria-hidden="true">
+                    05
+                  </span>
+
+                  <span class="service-name">
+                    Veterinaria
+                  </span>
+
+                  <span class="chevron" aria-hidden="true">
+                    ⌄
+                  </span>
+
+                </button>
+
+              </h3>
+
+
+              <div
+                class="accordion-panel"
+                id="service-panel-5"
+                role="region"
+                aria-labelledby="service-trigger-5"
+                hidden
+              >
+
+                <p>
+                  Consulta médica veterinaria, vacunación,
+                  desparasitación, atención preventiva.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <!-- =================================================
+               FELINO
+               Cambia la imagen en:
+               assets/felino.png
+               ================================================= -->
+          <aside
+            class="mascot-card"
+            aria-label="Mascota del Centro Solidaridad"
+          >
+
+            <div class="mascot-card__badge">
+              Estamos para ayudarte
+            </div>
+
+            <img
+              src="assets/felino.png"
+              alt="Felino con lentes y computadora junto a una mesa de dibujo"
+              class="mascot-card__image"
+            >
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         AGENDA TU CITA
+         Cambia los teléfonos directamente en los href tel:
+         ===================================================== -->
+    <section
+      class="appointment section"
+      id="agenda"
+      aria-labelledby="appointment-title"
+    >
+
+      <div class="container">
+
+        <div class="appointment-card">
+
+          <div class="appointment-card__content">
+
+            <span class="eyebrow">
+              Da el siguiente paso
+            </span>
+
+            <h2 id="appointment-title">
+              Agenda tu cita
+            </h2>
+
+            <p>
+              Comunícate directamente con el Centro Solidaridad
+              para solicitar una cita y obtener más información.
+            </p>
+
+
+            <div class="contact-actions">
+
+
+              <!-- TELÉFONO 1 -->
+              <a
+                class="button button--red button--large"
+                href="tel:4779060120"
+                aria-label="Llamar al 477 906 01 20 para agendar cita"
+              >
+
+                <span class="button__icon" aria-hidden="true">
+                  ☎
+                </span>
+
+                <span>
+
+                  <strong>
+                    Llamar para agendar cita
+                  </strong>
+
+                  <small>
+                    477 906 01 20
+                  </small>
+
+                </span>
+
+              </a>
+
+
+              <!-- TELÉFONO 2 -->
+              <a
+                class="button button--red button--large"
+                href="tel:4779060121"
+                aria-label="Llamar al 477 906 01 21 para agendar cita"
+              >
+
+                <span class="button__icon" aria-hidden="true">
+                  ☎
+                </span>
+
+                <span>
+
+                  <strong>
+                    Llamar para agendar cita
+                  </strong>
+
+                  <small>
+                    477 906 01 21
+                  </small>
+
+                </span>
+
+              </a>
+              <a
+                class="button button--red button--large"
+                href="https://wa.me/524792243475"
+                aria-label="WhatsApp al 479 224 3475 para agendar cita"
+              >
+
+                <span class="button__icon" aria-hidden="true">
+                  💬
+                </span>
+
+                <span>
+
+                  <strong>
+                    Contacto para agendar cita
+                  </strong>
+
+                  <small>
+                    479 224 3475
+                  </small>
+
+                </span>
+
+              </a>
+            </div>
+
+
+            <!-- GOOGLE MAPS -->
+            <a
+              class="button button--outline"
+              href="https://maps.app.goo.gl/hE6iERobULDCzi5j9"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir ubicación del Centro Solidaridad en Google Maps"
+            >
+
+              <span aria-hidden="true">
+                📍
+              </span>
+
+              Cómo llegar al Centro Solidaridad
+
+            </a>
+
+          </div>
+
+
+          <div
+            class="appointment-card__mark"
+            aria-hidden="true"
+          >
+
+            <span>
+              La Salle 
+            </span>
+
+            <span>
+              Centro Solidario
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <p>
+        Derechos reservados © Universidad La Salle Bajío – Centro Solidaridad Satélite
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
