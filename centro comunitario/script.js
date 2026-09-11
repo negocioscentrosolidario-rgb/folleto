@@ -4,44 +4,49 @@
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".service-item");
+  // Seleccionar todas las estructuras de acordeón de la página
+  const accordions = document.querySelectorAll(".accordion");
 
-  function closeItem(item) {
-    const trigger = item.querySelector(".accordion-trigger");
-    const panel = item.querySelector(".accordion-panel");
+  accordions.forEach((accordion) => {
+    const items = accordion.querySelectorAll(".service-item");
 
-    item.classList.remove("is-open");
-    trigger.setAttribute("aria-expanded", "false");
-    panel.hidden = true;
-  }
+    function closeItem(item) {
+      const trigger = item.querySelector(".accordion-trigger");
+      const panel = item.querySelector(".accordion-panel");
 
-  function openItem(item) {
-    const trigger = item.querySelector(".accordion-trigger");
-    const panel = item.querySelector(".accordion-panel");
+      item.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+      panel.hidden = true;
+    }
 
-    item.classList.add("is-open");
-    trigger.setAttribute("aria-expanded", "true");
-    panel.hidden = false;
-  }
+    function openItem(item) {
+      const trigger = item.querySelector(".accordion-trigger");
+      const panel = item.querySelector(".accordion-panel");
 
-  items.forEach((item) => {
-    const trigger = item.querySelector(".accordion-trigger");
+      item.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+      panel.hidden = false;
+    }
 
-    trigger.addEventListener("click", () => {
-      const isOpen = trigger.getAttribute("aria-expanded") === "true";
+    items.forEach((item) => {
+      const trigger = item.querySelector(".accordion-trigger");
 
-      // Solo un apartado permanece abierto a la vez.
-      items.forEach((otherItem) => {
-        if (otherItem !== item) {
-          closeItem(otherItem);
+      trigger.addEventListener("click", () => {
+        const isOpen = trigger.getAttribute("aria-expanded") === "true";
+
+        // Mantiene solo un ítem abierto por cada acordeón individual
+        items.forEach((otherItem) => {
+          if (otherItem !== item) {
+            closeItem(otherItem);
+          }
+        });
+
+        if (isOpen) {
+          closeItem(item);
+        } else {
+          openItem(item);
         }
       });
-
-      if (isOpen) {
-        closeItem(item);
-      } else {
-        openItem(item);
-      }
     });
   });
 });
