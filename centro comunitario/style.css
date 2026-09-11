@@ -1,5 +1,5 @@
 /* ============================================================
-   CENTRO COMUNITARIO - UNIVERSIDAD LA SALLE BAJÍO
+   CENTRO COMUNITARIO 
    Hoja de estilos
    ============================================================ */
 
@@ -306,7 +306,11 @@ a {
 }
 
 .accordion-panel p {
-  margin: 0;
+  margin: 0 0 6px;
+}
+
+.accordion-panel p:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes panelIn {
@@ -370,10 +374,122 @@ a {
   object-position: center bottom;
 }
 
+/* ---------------- TALLERES Y CLASES ---------------- */
+
+.workshops {
+  background: #fafbfc;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.workshops-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.workshop-card {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 6px 20px rgba(22,34,73,.04);
+}
+
+.workshop-card--featured {
+  border-color: rgba(32, 47, 104, 0.18);
+  box-shadow: var(--shadow);
+}
+
+.workshop-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.workshop-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.workshop-badge--red {
+  background: #fde8ea;
+  color: var(--red);
+}
+
+.workshop-price {
+  font-weight: 800;
+  color: var(--red);
+  font-size: 0.95rem;
+}
+
+.workshop-card h3 {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.workshop-desc {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.workshop-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.workshop-details li {
+  padding: 12px 16px;
+  background: var(--blue-soft);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.workshop-details strong {
+  color: var(--blue);
+}
+
+.workshop-accordion {
+  margin-top: 15px;
+}
+
+.workshop-item .accordion-trigger {
+  padding: 14px 16px;
+}
+
+.workshop-item .service-icon {
+  width: 32px;
+  height: 32px;
+  font-size: 0.8rem;
+}
+
+.workshop-item .accordion-panel {
+  padding: 0 20px 16px 62px;
+  font-size: 0.88rem;
+}
+
 /* ---------------- APPOINTMENT ---------------- */
 
 .appointment {
-  padding-top: 30px;
+  padding-top: 60px;
   background: #f7f8fb;
 }
 
@@ -532,7 +648,8 @@ a {
     width: min(330px, 100%);
   }
 
-  .services-layout {
+  .services-layout,
+  .workshops-grid {
     grid-template-columns: 1fr;
   }
 
@@ -593,6 +710,14 @@ a {
   .accordion-panel {
     padding: 0 56px 18px 64px;
     font-size: .9rem;
+  }
+
+  .workshop-card {
+    padding: 22px 16px;
+  }
+
+  .workshop-item .accordion-panel {
+    padding: 0 16px 14px 48px;
   }
 
   .mascot-card {
