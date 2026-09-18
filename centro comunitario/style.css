@@ -1,5 +1,5 @@
 /* ============================================================
-   CENTRO COMUNITARIO 
+   CENTRO COMUNITARIO - UNIVERSIDAD LA SALLE BAJÍO
    Hoja de estilos
    ============================================================ */
 
@@ -389,6 +389,12 @@ a {
   align-items: start;
 }
 
+.workshops-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .workshop-card {
   padding: 32px;
   border: 1px solid var(--line);
@@ -486,6 +492,66 @@ a {
   font-size: 0.88rem;
 }
 
+/* TARJETA DE CONSULTA MÉDICA GRATIS */
+.free-consultation-card {
+  padding: 28px 32px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #202f68, #131e47);
+  color: var(--white);
+  box-shadow: 0 12px 30px rgba(19, 30, 71, 0.15);
+  border: 2px solid rgba(215, 25, 54, 0.4);
+}
+
+.free-consultation-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.free-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.free-icon {
+  font-size: 1.5rem;
+}
+
+.free-consultation-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  color: var(--white);
+}
+
+.free-consultation-card p {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9rem;
+}
+
+.free-consultation-details {
+  display: flex;
+  gap: 10px;
+}
+
+.time-tag {
+  display: inline-block;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
 /* ---------------- APPOINTMENT ---------------- */
 
 .appointment {
@@ -579,6 +645,7 @@ a {
   background: rgba(255,255,255,.08);
 }
 
+/* MARCA CIRCULAR Y AJUSTE DE IMAGEN */
 .appointment-card__mark {
   position: relative;
   align-self: center;
@@ -592,29 +659,27 @@ a {
   color: var(--white);
   background: rgba(255,255,255,.055);
   text-align: center;
-  transform: rotate(-8deg);
+  overflow: hidden; /* Corta la imagen si sobresale */
 }
 
 .appointment-card__mark::after {
   content: "";
   position: absolute;
-  inset: 12px;
-  border: 1px dashed rgba(255,255,255,.24);
+  inset: 8px;
+  border: 1px dashed rgba(255,255,255,.3);
   border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
 }
 
-.appointment-card__mark span:first-child {
-  font-size: 2.4rem;
-  font-weight: 800;
-  letter-spacing: -.05em;
-}
-
-.appointment-card__mark span:last-child {
-  max-width: 110px;
-  font-size: .7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
+.appointment-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Permite que la imagen se adapte perfectamente al círculo */
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -713,6 +778,10 @@ a {
   }
 
   .workshop-card {
+    padding: 22px 16px;
+  }
+
+  .free-consultation-card {
     padding: 22px 16px;
   }
 
