@@ -324,11 +324,13 @@ a {
   }
 }
 
+/* ---------------- MASCOT / CARRUSEL ---------------- */
+
 .mascot-card {
   position: relative;
   min-height: 520px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: var(--radius);
@@ -350,7 +352,7 @@ a {
 
 .mascot-card__badge {
   position: absolute;
-  z-index: 2;
+  z-index: 10;
   top: 22px;
   left: 22px;
   padding: 9px 13px;
@@ -367,11 +369,107 @@ a {
   position: relative;
   z-index: 1;
   display: block;
-  width: 94%;
+  width: 100%;
   height: 100%;
-  max-height: 610px;
+  max-height: 440px;
   object-fit: contain;
   object-position: center bottom;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 60px 20px 45px;
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--blue-dark);
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--white);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn--prev {
+  left: 14px;
+}
+
+.carousel-btn--next {
+  right: 14px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 6px;
+  max-width: 90%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dot.is-active {
+  background: var(--red);
+  transform: scale(1.35);
 }
 
 /* ---------------- TALLERES Y CLASES ---------------- */
@@ -635,6 +733,7 @@ a {
 }
 
 .button--outline {
+  width: 100%;
   color: var(--white);
   border-color: rgba(255,255,255,.45);
   background: transparent;
@@ -645,7 +744,53 @@ a {
   background: rgba(255,255,255,.08);
 }
 
-/* MARCA CIRCULAR Y AJUSTE DE IMAGEN */
+/* ESTILOS DE REDES SOCIALES */
+.social-links {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.social-title {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.social-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.button--social {
+  min-height: 48px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.2s ease, border-color 0.25s ease;
+}
+
+.button--facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: #ffffff;
+}
+
+.button--instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
 .appointment-card__mark {
   position: relative;
   align-self: center;
@@ -659,7 +804,7 @@ a {
   color: var(--white);
   background: rgba(255,255,255,.055);
   text-align: center;
-  overflow: hidden; /* Corta la imagen si sobresale */
+  overflow: hidden;
 }
 
 .appointment-card__mark::after {
@@ -675,7 +820,7 @@ a {
 .appointment-card__img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Permite que la imagen se adapte perfectamente al círculo */
+  object-fit: cover;
   border-radius: 50%;
   display: block;
   position: relative;
@@ -719,8 +864,12 @@ a {
   }
 
   .mascot-card {
-    min-height: 430px;
+    min-height: 450px;
     order: -1;
+  }
+
+  .carousel-track {
+    min-height: 450px;
   }
 
   .appointment-card {
@@ -777,10 +926,7 @@ a {
     font-size: .9rem;
   }
 
-  .workshop-card {
-    padding: 22px 16px;
-  }
-
+  .workshop-card,
   .free-consultation-card {
     padding: 22px 16px;
   }
@@ -790,11 +936,15 @@ a {
   }
 
   .mascot-card {
-    min-height: 360px;
+    min-height: 380px;
+  }
+
+  .carousel-track {
+    min-height: 380px;
   }
 
   .mascot-card__image {
-    width: 100%;
+    max-height: 320px;
   }
 
   .appointment-card {
@@ -802,7 +952,8 @@ a {
     border-radius: 22px;
   }
 
-  .contact-actions {
+  .contact-actions,
+  .social-buttons {
     grid-template-columns: 1fr;
   }
 
